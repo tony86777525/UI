@@ -5,7 +5,36 @@
     <meta charset='utf-8'>
     <!--<link rel="stylesheet" type="text/css" href="assets/styles.css">-->
     <!--<link rel="manifest" href="assets/manifest.json">-->
-    <style></style>
+    <style type="text/css">#application-splash-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #87beff;
+    }
+    *, *:before, *:after {
+        border: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    :root {
+        font-size: 20px;
+    }
+    body {
+        background: #87beff;
+        color: #222;
+        font: 1em "Anton", sans-serif;
+        line-height: 1.5;
+        overflow-x: hidden;
+    }
+    .loadAnimate{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.dump-truck,.dump-truck div,.progress-container{position:absolute}.progress-container{top:0;left:0;transform:translate(-50%,-50%);height:7.5em;z-index:2;text-align:center;width:30em}.progress-box{border:.1em solid #ff7ca2;border-radius:3px;height:1.5em;overflow:hidden;transform:translateZ(0);position:relative;z-index:10}.progress-box .progress-fill{width:0%;height:100%;background-color:#ff9bba;transition:height .5s ease-out}.progress-state{color:#ff7ca2;font-size:48px;font-weight:700}.progress-state.state-finish{display:none}.dump-truck{top:2em;left:-15em;width:14em;height:8em;opacity:0;display:none}.dump-truck.choco .bucket{background:url(https://d919tivf645f5.cloudfront.net/files.chocolat.work/game/track/chocolat.png) no-repeat center/100% 100%}.dump-truck.job .bucket{background:url(https://d919tivf645f5.cloudfront.net/files.chocolat.work/game/track/job.png) no-repeat center/100% 100%}.dump-truck .front{background:linear-gradient(#fff,#fff) 2.7em .75em/.2em 2em,linear-gradient(#a0a0a0,#a0a0a0) 1em 3.5em/.8em .2em,linear-gradient(#505050,#505050) 3.3em 6.1em/.5em .2em,linear-gradient(#505050,#505050) 3.3em 6.8em/.5em .2em,linear-gradient(83deg,#282828 49%,rgba(40,40,40,0) 50%) 1em .75em/5em 2em,radial-gradient(3.4em 4.6em at 33% 100%,rgba(255,255,255,0) 49%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 59%,rgba(255,255,255,0) 60%),radial-gradient(3.4em 4.6em at 33% 100%,rgba(255,63,48,0) 49%,#fff 50%);background-repeat:no-repeat;border-radius:10% 20% 5% 25%/10% 50% 5% 100%;top:.4em;left:10.1em;width:3.9em;height:7em}.dump-truck .bucket{top:0;left:0;width:10em;height:5.5em;transform:rotate(0);transform-origin:22% 100%}.dump-truck .base{background:#7f5b58;border-radius:.25em;top:5.5em;left:2em;width:8.3em;height:1.5em}.dump-truck .wheel{background:radial-gradient(100% 100%,#282828 9%,rgba(40,40,40,0) 10%),radial-gradient(100% 100%,#a0a0a0 29%,rgba(160,160,160,0) 30%),linear-gradient(90deg,rgba(255,255,255,.15) 49%,rgba(255,255,255,0) 50%),radial-gradient(100% 100%,#282828 49%,rgba(40,40,40,0) 50%);border-radius:50%;bottom:0;width:2.4em;height:2.4em}.dump-truck .wheel-front{left:10.4em}.dump-truck .wheel-middle{left:4.5em}.dump-truck .wheel-back{left:2em}.dump-truck.choco.active{animation:backupL 5s ease-in-out 1 forwards}.dump-truck.job.active{animation:backupL 5s ease-in-out 1 forwards}.dump-truck.choco.active .wheel{animation:spinR 5s ease-in-out infinite}.dump-truck.job.active .wheel{animation:spinR 5s ease-in-out infinite}@keyframes backupL{from{transform:translateX(0)}from,to{opacity:0}to{transform:translateX(calc(30em - 14em))}12.5%,87.5%{opacity:1}}@keyframes spinR{from{transform:rotate(0)}to{transform:rotate(6turn)}}
+    html {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }</style>
     <title>ChocoBall</title>
     <!--<script src="assets/chocoball/playcanvas-stable.min.js"></script>-->
     <!--<script src="assets/chocoball/__settings__.js"></script>-->

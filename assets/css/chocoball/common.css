@@ -213,8 +213,9 @@
 	padding-bottom: 2.733485193621868%;
 	display: table;
 	width: 100%;
-	-webkit-transition: min-height 0.3s ease-in;
-	transition: min-height 0.3s ease-in;
+	max-height: calc((var(--vh, 1vh) * 100) * (1 - (60 / 675)));
+	-webkit-transition: height 0.3s ease-in;
+	transition: height 0.3s ease-in;
 }
 
 .board__content:before {
@@ -348,11 +349,11 @@
 }
 
 .board__content.idx {
-	min-height: 62.99212598425197vh;
+	height: 62.99212598425197vh;
 }
 
 .board__content.other {
-	min-height: 78.74015748031496vh;
+	height: 100vh;
 }
 
 .board--setting {

@@ -165,10 +165,11 @@ $path = "../../img/chocoball/"
         padding-bottom (12/439)*100%
         display table
         width 100%
-        -moz-transition min-height .3s ease-in
-        -o-transition min-height .3s ease-in
-        -webkit-transition min-height .3s ease-in
-        transition min-height .3s ease-in
+        max-height calc((var(--vh, 1vh) * 100) * (1 - (60 / 675)))
+        -moz-transition height .3s ease-in
+        -o-transition height .3s ease-in
+        -webkit-transition height .3s ease-in
+        transition height .3s ease-in
 
         &:before
             content ''
@@ -259,10 +260,11 @@ $path = "../../img/chocoball/"
                     display block
                     width 100%
         &.idx
-            min-height (400/635)*100vh
+            height (400/635)*100vh
 
         &.other
-            min-height (500/635)*100vh
+            height 100vh
+
 
     &--setting
         display none

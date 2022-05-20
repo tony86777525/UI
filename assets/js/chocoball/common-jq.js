@@ -2,6 +2,7 @@ screenButton();
 settingButton();
 getRankingAllDataButton();
 getGameLevel();
+safariHacks();
 
 function getRankingAllDataButton() {
     $('[data-get-ranking-data-button="true"]').on('click', function () {
@@ -303,3 +304,11 @@ function getGameLevel() {
 //         },
 //     });
 // }
+
+function safariHacks() {
+    let windowsVH = window.innerHeight / 100;
+    document.querySelector('.board__content').style.setProperty('--vh', windowsVH + 'px');
+    window.addEventListener('resize', function() {
+        document.querySelector('.board__content').style.setProperty('--vh', windowsVH + 'px');
+    });
+}
