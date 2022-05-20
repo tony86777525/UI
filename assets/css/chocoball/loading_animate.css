@@ -1,0 +1,516 @@
+#application-splash-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 100%;
+	width: 100%;
+	background-color: #87beff 3;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+/* transform scale(0.45) */
+}
+
+*,
+*:before,
+*:after {
+	border: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-size: 20px;
+}
+
+body {
+	background: #87beff;
+	color: #222;
+	font: 1em "Anton", sans-serif;
+	line-height: 1.5;
+	overflow-x: hidden;
+}
+
+.progress-container,
+.progress-state,
+.dump-truck,
+.dump-truck div {
+	position: absolute;
+}
+
+.progress-container,
+.progress-box {
+	width: 6em;
+}
+
+.progress-container {
+	top: 50%;
+	left: calc(50% - 3em);
+	height: 7.5em;
+	z-index: 2;
+}
+
+.progress-box {
+	border-radius: 0 0 50% 50%;
+	border: 0.3em solid #505050;
+	border-top: 0;
+	height: 4em;
+	overflow: hidden;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	position: relative;
+	z-indev: 10;
+}
+
+.progress-glass {
+	position: relative;
+}
+
+.progress-glass::before {
+	content: "";
+	position: absolute;
+	background-color: #505050;
+	top: 100%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	width: 6px;
+	height: 60px;
+}
+
+.progress-glass::after {
+	content: "";
+	position: absolute;
+	background-color: #505050;
+	top: calc(100% + 60px);
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	width: 60px;
+	height: 10px;
+	border-radius: 30px 30px 0px 0px;
+}
+
+.progress-fill {
+	-webkit-animation: fillDirt 10s linear forwards;
+	animation: fillDirt 10s linear forwards;
+	background: #ff9bba;
+	-webkit-transition: height 0.5s ease-out;
+	transition: height 0.5s ease-out;
+	width: 100%;
+	height: 0%;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 0;
+}
+
+.progress-state {
+	bottom: -60px;
+	left: 0;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.state-finish {
+	display: none;
+}
+/* trucks */
+.dump-truck {
+	opacity: 0;
+	top: calc(50% - 4em);
+	width: 14em;
+	height: 8em;
+}
+
+.dump-truck:nth-of-type(2) {
+	-webkit-animation: backupL 10s ease-in-out infinite forwards;
+	animation: backupL 10s ease-in-out infinite forwards;
+	right: 50%;
+	-webkit-transform: scaleX(-1) translateX(5em);
+	transform: scaleX(-1) translateX(5em);
+}
+
+.dump-truck:nth-of-type(2) .bucket {
+	-webkit-animation: dump 10s linear infinite;
+	animation: dump 10s linear infinite;
+	background: url("https://d919tivf645f5.cloudfront.net/files.chocolat.work/game/track/chocolat.png") no-repeat center/100% 100%;
+}
+
+.dump-truck:nth-of-type(2) .dirt {
+	-webkit-animation: rotateDirt 10s linear infinite;
+	animation: rotateDirt 10s linear infinite;
+}
+
+.dump-truck:nth-of-type(2) .dirt-spill {
+	-webkit-animation: pourDirt 10s linear infinite;
+	animation: pourDirt 10s linear infinite;
+}
+
+.dump-truck:nth-of-type(2) .wheel {
+	-webkit-animation: spinL 10s ease-in-out infinite;
+	animation: spinL 10s ease-in-out infinite;
+}
+
+.dump-truck:last-of-type {
+	-webkit-animation: backupR 10s 5s ease-in-out infinite forwards;
+	animation: backupR 10s 5s ease-in-out infinite forwards;
+	left: 50%;
+	-webkit-transform: translateX(5em);
+	transform: translateX(5em);
+}
+
+.dump-truck:last-of-type .bucket {
+	-webkit-animation: dump 10s 5s linear infinite;
+	animation: dump 10s 5s linear infinite;
+}
+
+.dump-truck:last-of-type .dirt {
+	-webkit-animation: rotateDirt 10s 5s linear infinite;
+	animation: rotateDirt 10s 5s linear infinite;
+}
+
+.dump-truck:last-of-type .dirt-spill {
+	-webkit-animation: pourDirt 10s 5s linear infinite;
+	animation: pourDirt 10s 5s linear infinite;
+}
+
+.dump-truck:last-of-type .wheel {
+	-webkit-animation: spinR 10s 5s ease-in-out infinite;
+	animation: spinR 10s 5s ease-in-out infinite;
+}
+
+.front {
+	background: linear-gradient(#fff, #fff) 2.7em 0.75em/0.2em 2em, linear-gradient(#a0a0a0, #a0a0a0) 1em 3.5em/0.8em 0.2em, linear-gradient(#505050, #505050) 3.3em 6.1em/0.5em 0.2em, linear-gradient(#505050, #505050) 3.3em 6.8em/0.5em 0.2em, linear-gradient(83deg, #282828 49%, rgba(40,40,40,0) 50%) 1em 0.75em/5em 2em, radial-gradient(3.4em 4.6em at 33% 100%, rgba(255,255,255,0) 49%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 59%, rgba(255,255,255,0) 60%), radial-gradient(3.4em 4.6em at 33% 100%, rgba(255,63,48,0) 49%, #fff 50%);
+	background-repeat: no-repeat;
+	border-radius: 10% 20% 5% 25%/10% 50% 5% 100%;
+	top: 0.4em;
+	left: 10.1em;
+	width: 3.9em;
+	height: 7em;
+}
+
+.bucket {
+	background: url("https://d919tivf645f5.cloudfront.net/files.chocolat.work/game/track/job.png") no-repeat center/100% 100%;
+	top: 0;
+	left: 0;
+	width: 10em;
+	height: 5.5em;
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transform-origin: 22% 100%;
+	transform-origin: 22% 100%;
+}
+
+.dirt {
+	background: #ff9bba;
+	border-radius: 0 0 50% 50%/0 0 100% 100%;
+	top: 1.1em;
+	left: -3.2em;
+	width: 7.4em;
+	height: 3em;
+	-webkit-transform: rotate(-25deg);
+	transform: rotate(-25deg);
+	-webkit-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	z-index: -1;
+}
+
+.dirt-spill {
+	background: #ff9bba;
+	border-radius: 0.4em;
+	top: 0;
+	left: -5.25em;
+	-webkit-transform: rotate(-40deg) scale(1, 1);
+	transform: rotate(-40deg) scale(1, 1);
+	-webkit-transform-origin: 5.25em 0em;
+	transform-origin: 5.25em 0em;
+	width: 5.5em;
+	height: 0.8em;
+}
+
+.base {
+	background: #7f5b58;
+	border-radius: 0.25em;
+	top: 5.5em;
+	left: 2em;
+	width: 8.3em;
+	height: 1.5em;
+}
+
+.wheel {
+	background: radial-gradient(100% 100%, #282828 9%, rgba(40,40,40,0) 10%), radial-gradient(100% 100%, #a0a0a0 29%, rgba(160,160,160,0) 30%), -webkit-gradient(linear, left top, right top, color-stop(49%, rgba(255,255,255,0.15)), color-stop(50%, rgba(255,255,255,0))), radial-gradient(100% 100%, #282828 49%, rgba(40,40,40,0) 50%);
+	background: radial-gradient(100% 100%, #282828 9%, rgba(40,40,40,0) 10%), radial-gradient(100% 100%, #a0a0a0 29%, rgba(160,160,160,0) 30%), linear-gradient(90deg, rgba(255,255,255,0.15) 49%, rgba(255,255,255,0) 50%), radial-gradient(100% 100%, #282828 49%, rgba(40,40,40,0) 50%);
+	border-radius: 50%;
+	bottom: 0;
+	width: 2.4em;
+	height: 2.4em;
+}
+
+.wheel-front {
+	left: 10.4em;
+}
+
+.wheel-middle {
+	left: 4.5em;
+}
+
+.wheel-back {
+	left: 2em;
+}
+/* animations */
+@-webkit-keyframes backupL {
+	from, 50%, to {
+		opacity: 0;
+		-webkit-transform: scaleX(-1) translateX(20em);
+		transform: scaleX(-1) translateX(20em);
+	}
+
+	12.5%, 37.5% {
+		opacity: 1;
+		-webkit-transform: scaleX(-1) translateX(5em);
+		transform: scaleX(-1) translateX(5em);
+	}
+}
+
+@keyframes backupL {
+	from, 50%, to {
+		opacity: 0;
+		-webkit-transform: scaleX(-1) translateX(20em);
+		transform: scaleX(-1) translateX(20em);
+	}
+
+	12.5%, 37.5% {
+		opacity: 1;
+		-webkit-transform: scaleX(-1) translateX(5em);
+		transform: scaleX(-1) translateX(5em);
+	}
+}
+
+@-webkit-keyframes backupR {
+	from, 50%, to {
+		opacity: 0;
+		-webkit-transform: translateX(20em);
+		transform: translateX(20em);
+	}
+
+	12.5%, 37.5% {
+		opacity: 1;
+		-webkit-transform: translateX(5em);
+		transform: translateX(5em);
+	}
+}
+
+@keyframes backupR {
+	from, 50%, to {
+		opacity: 0;
+		-webkit-transform: translateX(20em);
+		transform: translateX(20em);
+	}
+
+	12.5%, 37.5% {
+		opacity: 1;
+		-webkit-transform: translateX(5em);
+		transform: translateX(5em);
+	}
+}
+
+@-webkit-keyframes dump {
+	from, 12.5%, 37.5%, to {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	20%, 30% {
+		-webkit-transform: rotate(-40deg);
+		transform: rotate(-40deg);
+	}
+}
+
+@keyframes dump {
+	from, 12.5%, 37.5%, to {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	20%, 30% {
+		-webkit-transform: rotate(-40deg);
+		transform: rotate(-40deg);
+	}
+}
+
+@-webkit-keyframes rotateDirt {
+	from, 19.9%, 30.1%, to {
+		opacity: 0;
+	}
+
+	20%, 30% {
+		opacity: 1;
+		-webkit-transform: rotate(-40deg);
+		transform: rotate(-40deg);
+	}
+
+	25% {
+		-webkit-transform: rotate(-25deg);
+		transform: rotate(-25deg);
+	}
+}
+
+@keyframes rotateDirt {
+	from, 19.9%, 30.1%, to {
+		opacity: 0;
+	}
+
+	20%, 30% {
+		opacity: 1;
+		-webkit-transform: rotate(-40deg);
+		transform: rotate(-40deg);
+	}
+
+	25% {
+		-webkit-transform: rotate(-25deg);
+		transform: rotate(-25deg);
+	}
+}
+
+@-webkit-keyframes pourDirt {
+	from, 20% {
+		-webkit-transform: rotate(-40deg) scale(0, 0);
+		transform: rotate(-40deg) scale(0, 0);
+	}
+
+	25% {
+		-webkit-transform: rotate(-40deg) scale(1, 1);
+		transform: rotate(-40deg) scale(1, 1);
+	}
+
+	30%, to {
+		-webkit-transform: rotate(-25deg) scale(0.8, 0);
+		transform: rotate(-25deg) scale(0.8, 0);
+	}
+}
+
+@keyframes pourDirt {
+	from, 20% {
+		-webkit-transform: rotate(-40deg) scale(0, 0);
+		transform: rotate(-40deg) scale(0, 0);
+	}
+
+	25% {
+		-webkit-transform: rotate(-40deg) scale(1, 1);
+		transform: rotate(-40deg) scale(1, 1);
+	}
+
+	30%, to {
+		-webkit-transform: rotate(-25deg) scale(0.8, 0);
+		transform: rotate(-25deg) scale(0.8, 0);
+	}
+}
+
+@-webkit-keyframes spinL {
+	from, 50%, to {
+		-webkit-transform: rotate(-0.5turn);
+		transform: rotate(-0.5turn);
+	}
+
+	12.5%, 37.5% {
+		-webkit-transform: rotate(-2.5turn);
+		transform: rotate(-2.5turn);
+	}
+}
+
+@keyframes spinL {
+	from, 50%, to {
+		-webkit-transform: rotate(-0.5turn);
+		transform: rotate(-0.5turn);
+	}
+
+	12.5%, 37.5% {
+		-webkit-transform: rotate(-2.5turn);
+		transform: rotate(-2.5turn);
+	}
+}
+
+@-webkit-keyframes spinR {
+	from, 50%, to {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	12.5%, 37.5% {
+		-webkit-transform: rotate(-2turn);
+		transform: rotate(-2turn);
+	}
+}
+
+@keyframes spinR {
+	from, 50%, to {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	12.5%, 37.5% {
+		-webkit-transform: rotate(-2turn);
+		transform: rotate(-2turn);
+	}
+}
+
+@-webkit-keyframes hideLoad {
+	from {
+		visibility: visible;
+	}
+
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes hideLoad {
+	from {
+		visibility: visible;
+	}
+
+	to {
+		visibility: hidden;
+	}
+}
+
+@-webkit-keyframes showFinish {
+	from {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		visibility: visible;
+	}
+
+	80% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		visibility: visible;
+	}
+}
+
+@keyframes showFinish {
+	from {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		visibility: visible;
+	}
+
+	80% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		visibility: visible;
+	}
+}

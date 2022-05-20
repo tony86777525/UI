@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="165" height="55" viewBox="0 0 165 55">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fdfdfd"/>
+      <stop offset="0.263" stop-color="#e7e8e8"/>
+      <stop offset="0.563" stop-color="#c7c8ca"/>
+      <stop offset="0.784" stop-color="#f1f1f1"/>
+      <stop offset="1" stop-color="#d8dada"/>
+    </linearGradient>
+    <filter id="長方形_2" x="0" y="0" width="165" height="55" filterUnits="userSpaceOnUse">
+      <feOffset dx="1.753" dy="3.595" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="グループ_1" data-name="グループ 1" transform="translate(-169.253 -542.095)">
+    <g transform="matrix(1, 0, 0, 1, 169.25, 542.1)" filter="url(#長方形_2)">
+      <g id="長方形_2-2" data-name="長方形 2" transform="translate(5.75 3.9)" stroke="#000" stroke-width="0" fill="url(#linear-gradient)">
+        <rect width="150" height="40" rx="20" stroke="none"/>
+        <rect width="150" height="40" rx="20" fill="none"/>
+      </g>
+    </g>
+    <text id="閉じる" transform="translate(250.421 573.26)" fill="#222" font-size="21" font-family="KozGoPr6N-Medium, Kozuka Gothic Pr6N" font-weight="500"><tspan x="-31.5" y="0">閉じる</tspan></text>
+  </g>
+</svg>
